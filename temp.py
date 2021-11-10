@@ -17,7 +17,7 @@ header = args.t
 import csv
 
 
-if header == True:
+if header == "true":
     line_count = 0
 else:
     line_count = 1
@@ -26,11 +26,11 @@ else:
 with open(input_file, 'rt') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for line in csv_reader:
-        print(line_count)
         if line_count == 0:
             line_count += 1
             continue
         else:
             print(line)
+            line_count += 1
 
 csv_file.close()
