@@ -34,3 +34,16 @@ def account_no_check(accno):
 
     if val:
         return val
+
+def postcode_validate(pc):
+
+    import requests
+    import json
+
+    url = "https://api.postcodes.io/postcodes/" + pc + "/validate"
+
+    data = requests.get(url)
+
+    result = data.json().get('result')
+
+    return result

@@ -33,8 +33,10 @@ with open(input_file, 'rt') as csv_file:
                 col4 = "invalid"
             else:
                 col4 = line[4]
+
+            col5 = postcode_validate(line[5])
             
-            print(line[0], col1, line[2], col3, col4)
+            print(line[0], col1, line[2], col3, col4, col5)
 
 csv_file.close()
 
