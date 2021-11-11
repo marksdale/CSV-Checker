@@ -15,22 +15,28 @@ output_file = args.o
 header = args.t
 
 import csv
-
-
-if header == "true":
-    line_count = 0
-else:
-    line_count = 1
-
+from functions import *
 
 with open(input_file, 'rt') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     for line in csv_reader:
-        if line_count == 0:
-            line_count += 1
-            continue
+        if header == "true":
+            header = "false"
         else:
-            print(line)
-            line_count += 1
+            col1 = format(line[1], "0>3")
+            if password_check(line[3]) == None:
+                col3 = "insecure"
+            else:
+                col3 = line[3]
+            
+            if account_no_check(line[4]) == None:
+                col4 = "invalid"
+            else:
+                col4 = line[4]
+            
+            print(line[0], col1, line[2], col3, col4)
 
 csv_file.close()
+
+quit()
+
