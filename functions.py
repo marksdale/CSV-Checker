@@ -27,7 +27,8 @@ def password_check(passwd):
 
     if val:
         return val
-# check postcode is in correct format
+
+# check account number is in correct format
 def account_no_check(accno):
     val = True
       
