@@ -1,3 +1,8 @@
+############################################
+#  Custom functions for data checking
+############################################
+
+# check password is complex
 def password_check(passwd):
     SpecialSym =['$', '@', '#', '%', "£", "*", "!"]
     val = True
@@ -22,7 +27,7 @@ def password_check(passwd):
 
     if val:
         return val
-
+# check postcode is in correct format
 def account_no_check(accno):
     val = True
       
@@ -35,11 +40,11 @@ def account_no_check(accno):
     if val:
         return val
 
+# check postcode is valid.  Query https://postcodes.io API
 def postcode_validate(pc):
 
-    import requests
-    import json
-
+    import requests      # requests is not a standard Python library.  Use 'python -m pip install requests' to install.
+   
     url = "https://api.postcodes.io/postcodes/" + pc + "/validate"
 
     data = requests.get(url)
