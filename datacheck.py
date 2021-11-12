@@ -33,6 +33,7 @@ with open(input_file, 'rt') as csv_file:
     for line in csv_reader:
         if header == "true":
             header = "false"
+            print(line[0],line[1], line[2], line[3], line[4], line[5])
         else:
             # ensure all numbers are 3 chrs long.  prefix with zeros where not.
             col1 = format(line[1], "0>3")
@@ -47,7 +48,10 @@ with open(input_file, 'rt') as csv_file:
             else:
                 col4 = line[4]
             # run the postcode checker function to check validity of the postcode.
-            col5 = postcode_validate(line[5])
+            if postcode_validate(line[5])== False:
+                col5 = "invalid"
+            else:
+                col5 = line[5]
             # print results for checking
             print(line[0], col1, line[2], col3, col4, col5)
 #close csv file as all done.
