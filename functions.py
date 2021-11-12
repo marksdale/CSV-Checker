@@ -53,3 +53,14 @@ def postcode_validate(pc):
     result = data.json().get('result')
 
     return result
+
+def write_to_file(data, target):
+     import csv
+     with open(target, "a", newline='') as csvfile:
+          writer = csv.writer(csvfile, delimiter=',')
+          writer.writerow(data)
+
+def get_path(output_path):
+     import os.path
+     path = os.path.dirname(output_path)
+     return path
