@@ -54,12 +54,14 @@ def postcode_validate(pc):
 
     return result
 
+# write data to file by appending.  If file does not exist it is created.
 def write_to_file(data, target):
      import csv
-     with open(target, "a", newline='') as csvfile:
+     with open(target, "at", newline='') as csvfile:
           writer = csv.writer(csvfile, delimiter=',')
           writer.writerow(data)
-
+     
+# strip filename from path argument to be used elsewhere.
 def get_path(output_path):
      import os.path
      path = os.path.dirname(output_path)
