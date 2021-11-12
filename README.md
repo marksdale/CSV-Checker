@@ -1,6 +1,6 @@
 # Example CSV Data Checking Script
 
-Python script to check a csv file for issues.  Writes good output to separate file and errors to another.
+Python script to check a csv file for issues.  Writes good output to separate file and errors to another.  First small project to teach myself various aspects of Python.
 
 ## Technologies used:
 - Python 3.9.8
@@ -18,11 +18,11 @@ Python script to check a csv file for issues.  Writes good output to separate fi
 
 ## Script obectives
 
-The data from the input file is taken line by line and in some cases the contents checked for validity.
+The data from the input file is taken line by line and in some cases the contents checked for validity.  Where issues are found the the whole record is written to the error.csv file in the output location along with a note of the issue.  IF all fields in a record are okay the data is written to the output file.
 
 ### Actions undertaken are:
 
-1. If **number** is less than 3 chrs long append zeros.
+1. If **number** is less than 3 chrs long prefix zeros.
 2. **password** is checked for complexity.  It must:
     - be =<8 chrs long>
     - contain at least one upper case chr.
